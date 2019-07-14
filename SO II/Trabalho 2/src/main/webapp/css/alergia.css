@@ -1,0 +1,33 @@
+
+body{
+    background-color: lightgoldenrodyellow;
+    font-family: Arial;
+    color: #003200;
+}
+
+table{
+    font-family: Arial;
+    color: #003200;
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+    font-familenu{
+    color: darkgreen;
+    font-family: Arial;
+    font-size: 20px;
+}
+y: Arial;
+}
+
+a:hover{
+    color: forestgreen;
+    cursor: pointer;
+}
+
+.topmenu{
+    color: darkgreen;
+    font-family: Arial;
+    font-size: 20px;
+}

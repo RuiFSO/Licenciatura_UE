@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+    <servlet>
+        <servlet-name>AlergiaServlet</servlet-name>
+        <servlet-class>alergia.AlergiaServlet</servlet-class>
+        
+        <init-param>
+            <param-name>base</param-name>
+            <param-value>alergia</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>imageURL</param-name>
+            <param-value>images/</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>PG_host</param-name>
+            <param-value>alunos.di.uevora.pt</param-value>
+         </init-param>        
+        <init-param>
+            <param-name>PG_dbname</param-name>
+            <param-value>l31511</param-value>
+        </init-param>        
+        <init-param>
+            <param-name>PG_dbuser</param-name>
+            <param-value>l31511</param-value>
+        </init-param>        
+        <init-param>
+            <param-name>PG_dbpwd</param-name>
+            <param-value>Rui31511</param-value>
+        </init-param>       
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AlergiaServlet</servlet-name>
+        <url-pattern>/alergia/*</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>alergia</welcome-file>
+    </welcome-file-list>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <security-role>
+        <role-name>valid_user</role-name>
+    </security-role>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Exigir autenticacao</web-resource-name>
+            <url-pattern>/auth/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>valid_user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/Login.jsp</form-login-page>
+            <form-error-page>/ErroLogin.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    
+</web-app>
